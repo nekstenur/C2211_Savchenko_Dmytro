@@ -1,1 +1,1 @@
-print("W Speed!!")
+print("GitHub")
