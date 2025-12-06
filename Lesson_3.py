@@ -40,13 +40,47 @@ class Human:
         self.job = Job(job_list)
 
     def eat(self):
-        pass
+        if self.home.food <= 0:
+            self.shopping("food")
+        else:
+            if self.satiety >= 100:
+                self.satiety = 100
+                return
+            self.satiety += 5
+            self.home.food -= 5
 
     def work(self):
-        pass
+        if self.car.drive():
+            pass
+        else:
+            if self.car.fuel < 20:
+                self.shopping("fuel")
+                return
+            else:
+                self.to_repair()
+                return
+        self.money += self.job.salary
+        self.gladness -= self.job.gladness
+        self.satiety -= 4
 
-    def shopping(self):
-        pass
+    def shopping(self, manage):
+        if self.car.drive():
+            pass
+        else:
+            if self.car.fuel < 20:
+                self.shopping("fuel")
+                return
+            else:
+                self.to_repair()
+                return
+        if manage == "fuel":
+            print("I bought fuel")
+            self.money -= 100
+            self.car.fuel += 100
+        elif manage == "food":
+            print("I bought food")
+            self.money -= 50
+            self.home
 
     def chill(self):
         pass
