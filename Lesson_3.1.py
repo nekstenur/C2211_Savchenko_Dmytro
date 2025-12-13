@@ -80,7 +80,7 @@ class Human:
         elif manage == "food":
             print("I bought food")
             self.money -= 50
-            #--self.home
+            self.home.food += 50
 
     def chill(self):
         pass
