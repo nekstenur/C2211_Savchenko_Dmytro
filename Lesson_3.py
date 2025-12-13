@@ -114,7 +114,7 @@ class Human:
         car_indexes = f"{self.car.brand} car indexes"
         print(f"{car_indexes:^50}", "\n")
         print(f"Fuel - {self.car.fuel}")
-        print(f"Strength - {self.car.sthength}")
+        print(f"Strength - {self.car.strength}")
 
     def is_alive(self):
         if self.gladness < 0:
@@ -123,7 +123,7 @@ class Human:
         if self.satiety < 0:
             print("Dead")
             return False
-        if self.money < 500:
+        if self.money < -500:
             print("Bankrupt")
             return False
 
