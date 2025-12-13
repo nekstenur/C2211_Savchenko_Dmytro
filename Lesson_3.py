@@ -117,10 +117,28 @@ class Human:
         print(f"Strength - {self.car.sthength}")
 
     def is_alive(self):
-        pass
+        if self.gladness < 0:
+            print("Depression...")
+            return False
+        if self.satiety < 0:
+            print("Dead")
+            return False
+        if self.money < 500:
+            print("Bankrupt")
+            return False
 
-    def live(self):
-        pass
+    def live(self, day):
+        if self.is_alive() == False:
+            return False
+        if self.home is None:
+            self.get_home()
+        if self.car is None:
+            self.get_car()
+            print(f"I bought a car {self.car.brand}")
+        if self.job is None:
+            self.get_job()
+            print(f"I get a job {self.job.job} with salary {self.job.salary}")
+        self.days_indexes(day)
 
 
 class Auto:
@@ -151,7 +169,3 @@ class Job:
         self.job = random.choice(list(job_list))
         self.salary = job_list[self.job]["salary"]
         self.gladness = job_list[self.job]["gladness_less"]
-
-
-
-
