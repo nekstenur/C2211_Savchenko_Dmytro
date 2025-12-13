@@ -81,7 +81,7 @@ class Human:
             print("I bought food")
             self.money -= 50
             self.home.food += 50
-            #--ghjkljjjjjjjjjgh
+            #--doesnt matter
 
     def chill(self):
         pass
