@@ -198,3 +198,11 @@ class Job:
         self.job = random.choice(list(job_list))
         self.salary = job_list[self.job]["salary"]
         self.gladness = job_list[self.job]["gladness_less"]
+
+
+
+hum1 = Human(name="Vasya")
+
+for day in range(1, 8):
+    if hum1.live(day) == False:
+        break
