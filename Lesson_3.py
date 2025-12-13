@@ -139,6 +139,35 @@ class Human:
             self.get_job()
             print(f"I get a job {self.job.job} with salary {self.job.salary}")
         self.days_indexes(day)
+        dice = random.randint(1, 4)
+        if self.satiety < 20:
+            print("Ill go eat")
+            self.eat()
+        elif self.gladness < 20:
+            if self.home.mess > 15:
+                print("Time to clean the house, Because i want to relax")
+                self.clean_home()
+            else:
+                print("Lets chill")
+                self.chill()
+        elif self.money < 0:
+            print("Its time to work")
+            self.work()
+        elif self.car.strength < 15:
+            print("I need to repair my car")
+            self.to_repair()
+        elif dice == 1:
+            print("Lets chill!")
+            self.chill()
+        elif dice == 2:
+            print("Its time to work")
+            self.work()
+        elif dice == 3:
+            print("Time to clean the house")
+            self.clean_home()
+        elif dice == 4:
+            print("Time for treats!")
+            self.shopping(manage="delicacies")
 
 
 class Auto:
