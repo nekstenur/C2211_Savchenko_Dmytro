@@ -1,6 +1,4 @@
-import sys
+import random
 
-print(sys.executable)
-print(sys.version)
-print(sys.platform)
-print(sys.argv)
+print(random.getstate)
+print(random.getrandbits)
