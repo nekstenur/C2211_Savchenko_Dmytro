@@ -203,6 +203,6 @@ class Job:
 
 hum1 = Human(name="Vasya")
 
-for day in range(1, 8):
+for day in range(1, 365):
     if hum1.live(day) == False:
         break
