@@ -80,94 +80,26 @@ class Human:
         elif manage == "food":
             print("I bought food")
             self.money -= 50
-            self.home += 50
-        elif manage == "delicacies":
-            print("Hooray! Delicious!")
-            self.gladness += 10
-            self.satiety += 2
-            self.money -= 15
+            self.home.food += 50
+            #--doesnt matter!
 
     def chill(self):
-        self.gladness += 10
-        self.home.mess += 5
+        pass
 
     def clean_home(self):
-        self.gladness -= 5
-        self.home.mess = 0
+        pass
 
     def to_repair(self):
-        self.car.sthength += 100
-        self.money -= 50
+        pass
 
     def days_indexes(self, day):
-        day = f"Today the {day} of {self.name}'s life"
-        print(f"{day:=^50}", "\n")
-        human_indexes = self.name + "'s indexes"
-        print(f"{human_indexes:^50}", "\n")
-        print(f"Money - {self.money}")
-        print(f"Satiety - {self.satiety}")
-        print(f"Gladness - {self.gladness}")
-        home_indexes = "Home indexes"
-        print(f"{home_indexes:^50}", "\n")
-        print(f"Food - {self.home.food}")
-        print(f"Mess - {self.home.mess}")
-        car_indexes = f"{self.car.brand} car indexes"
-        print(f"{car_indexes:^50}", "\n")
-        print(f"Fuel - {self.car.fuel}")
-        print(f"Strength - {self.car.strength}")
+        pass
 
     def is_alive(self):
-        if self.gladness < 0:
-            print("Depression...")
-            return False
-        if self.satiety < 0:
-            print("Dead")
-            return False
-        if self.money < -500:
-            print("Bankrupt")
-            return False
+        pass
 
-    def live(self, day):
-        if self.is_alive() == False:
-            return False
-        if self.home is None:
-            self.get_home()
-        if self.car is None:
-            self.get_car()
-            print(f"I bought a car {self.car.brand}")
-        if self.job is None:
-            self.get_job()
-            print(f"I get a job {self.job.job} with salary {self.job.salary}")
-        self.days_indexes(day)
-        dice = random.randint(1, 4)
-        if self.satiety < 20:
-            print("Ill go eat")
-            self.eat()
-        elif self.gladness < 20:
-            if self.home.mess > 15:
-                print("Time to clean the house, Because i want to relax")
-                self.clean_home()
-            else:
-                print("Lets chill")
-                self.chill()
-        elif self.money < 0:
-            print("Its time to work")
-            self.work()
-        elif self.car.strength < 15:
-            print("I need to repair my car")
-            self.to_repair()
-        elif dice == 1:
-            print("Lets chill!")
-            self.chill()
-        elif dice == 2:
-            print("Its time to work")
-            self.work()
-        elif dice == 3:
-            print("Time to clean the house")
-            self.clean_home()
-        elif dice == 4:
-            print("Time for treats!")
-            self.shopping(manage="delicacies")
+    def live(self):
+        pass
 
 
 class Auto:
@@ -198,11 +130,3 @@ class Job:
         self.job = random.choice(list(job_list))
         self.salary = job_list[self.job]["salary"]
         self.gladness = job_list[self.job]["gladness_less"]
-
-
-
-hum1 = Human(name="Vasya")
-
-for day in range(1, 365):
-    if hum1.live(day) == False:
-        break
