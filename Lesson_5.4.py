@@ -20,7 +20,7 @@ print(otstup)
 print(random.getstate)
 print(random.getrandbits)
 
-print(otstup)
+print(otstup) #das
 
 for module_name, module_path in sys.modules.items():
     name_of_module = f"{module_name:^50}"
